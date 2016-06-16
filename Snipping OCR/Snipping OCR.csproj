@@ -109,7 +109,7 @@
     <Compile Include="HotkeyHelper\HotKey.cs" />
     <Compile Include="OcrHelper\Ocr.cs" />
     <Compile Include="OcrHelper\OcrResult.cs" />
-    <Compile Include="ScreenHelper\ScreenHelper.cs" />
+    <Compile Include="SnippingTool\ScreenHelper.cs" />
     <Compile Include="SnippingTool\AreaSelectedEventArgs.cs" />
     <Compile Include="SnippingTool\SnippingTool.cs">
       <SubType>Form</SubType>
