@@ -8,7 +8,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tesseract;
 
@@ -242,7 +241,7 @@ namespace Snipping_OCR
         private void SnippingToolOnAreaSelected(object sender, AreaSelectedEventArgs e)
         {
             _isSnipping = false;
-            if (ModifierKeys.HasFlag(Keys.Control))
+            if ((ModifierKeys & Keys.Control) == Keys.Control)
             {
                 Clipboard.SetImage(e.Image);
                 ShowBaloonMessage("Copied to clipboard...", "OCR");

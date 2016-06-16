@@ -1,6 +1,6 @@
 ﻿namespace Snipping_OCR
 {
-    partial class SnippingTool
+    sealed partial class SnippingTool
     {
         /// <summary>
         /// Required designer variable.
