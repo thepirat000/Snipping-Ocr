@@ -238,18 +238,18 @@ namespace Snipping_OCR
             _isSnipping = false;
         }
 
-        private void SnippingToolOnAreaSelected(object sender, AreaSelectedEventArgs e)
+        private void SnippingToolOnAreaSelected(object sender, EventArgs e)
         {
             _isSnipping = false;
             if ((ModifierKeys & Keys.Control) == Keys.Control)
             {
-                Clipboard.SetImage(e.Image);
+                Clipboard.SetImage(SnippingTool.Image);
                 ShowBaloonMessage("Copied to clipboard...", "OCR");
             }
             else
             {
                 ShowBaloonMessage("Processing image...", "OCR");
-                ProcessOcrImage(e.Image);
+                ProcessOcrImage(SnippingTool.Image);
             }
         }
     }

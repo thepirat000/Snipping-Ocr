@@ -9,13 +9,13 @@ namespace Snipping_OCR
 {
     public sealed partial class SnippingTool : Form
     {
-        #region Public events
+        #region Public members
         public static event EventHandler Cancel;
-        public static event EventHandler<AreaSelectedEventArgs> AreaSelected;
+        public static event EventHandler AreaSelected;
+        public static Image Image { get; set; }
         #endregion
 
         #region Private members
-        private static Image _imageSelection;
         private static SnippingTool[] _forms;
         private Rectangle _rectSelection;
         private Point _pointStart;
@@ -44,7 +44,7 @@ namespace Snipping_OCR
             Cancel?.Invoke(this, e);
         }
 
-        private void OnAreaSelected(AreaSelectedEventArgs e)
+        private void OnAreaSelected(EventArgs e)
         {
             AreaSelected?.Invoke(this, e);
         }
@@ -117,19 +117,19 @@ namespace Snipping_OCR
                 OnCancel(new EventArgs());
                 return;
             }
-            _imageSelection = new Bitmap(_rectSelection.Width, _rectSelection.Height);
+            Image = new Bitmap(_rectSelection.Width, _rectSelection.Height);
             var wFix = BackgroundImage.Width / (double)Width;
             var hFix = BackgroundImage.Height / (double)Height;
-            using (Graphics gr = Graphics.FromImage(_imageSelection))
+            using (Graphics gr = Graphics.FromImage(Image))
             {
                 
                 gr.DrawImage(BackgroundImage, 
-                    new Rectangle(0, 0, _imageSelection.Width, _imageSelection.Height),
+                    new Rectangle(0, 0, Image.Width, Image.Height),
                     new Rectangle((int)(_rectSelection.X * wFix), (int)(_rectSelection.Y * hFix), (int)(_rectSelection.Width * wFix), (int)(_rectSelection.Height * hFix)),  
                     GraphicsUnit.Pixel);
             }
             CloseForms();
-            OnAreaSelected(new AreaSelectedEventArgs { Image = _imageSelection });
+            OnAreaSelected(new EventArgs());
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -157,7 +157,7 @@ namespace Snipping_OCR
             // Allow canceling the snip with the Escape key
             if (keyData == Keys.Escape)
             {
-                _imageSelection = null;
+                Image = null;
                 CloseForms();
                 OnCancel(new EventArgs());
             }

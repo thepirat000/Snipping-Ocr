@@ -110,7 +110,6 @@
     <Compile Include="OcrHelper\Ocr.cs" />
     <Compile Include="OcrHelper\OcrResult.cs" />
     <Compile Include="SnippingTool\ScreenHelper.cs" />
-    <Compile Include="SnippingTool\AreaSelectedEventArgs.cs" />
     <Compile Include="SnippingTool\SnippingTool.cs">
       <SubType>Form</SubType>
     </Compile>
