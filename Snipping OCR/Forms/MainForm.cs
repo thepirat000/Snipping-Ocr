@@ -35,6 +35,7 @@ namespace Snipping_OCR
         {
             RegisterClipboardViewer();
             RegisterHotKey();
+            ShowBaloonMessage("Double-click the systray icon or press CTRL+WIN+C to start a new snip...", "Snipping OCR");
             Hide();
         }
 
