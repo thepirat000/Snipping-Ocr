@@ -118,14 +118,14 @@ namespace Snipping_OCR
                 return;
             }
             Image = new Bitmap(_rectSelection.Width, _rectSelection.Height);
-            var wFix = BackgroundImage.Width / (double)Width;
-            var hFix = BackgroundImage.Height / (double)Height;
+            var hScale = BackgroundImage.Width / (double)Width;
+            var vScale = BackgroundImage.Height / (double)Height;
             using (Graphics gr = Graphics.FromImage(Image))
             {
                 
                 gr.DrawImage(BackgroundImage, 
                     new Rectangle(0, 0, Image.Width, Image.Height),
-                    new Rectangle((int)(_rectSelection.X * wFix), (int)(_rectSelection.Y * hFix), (int)(_rectSelection.Width * wFix), (int)(_rectSelection.Height * hFix)),  
+                    new Rectangle((int)(_rectSelection.X * hScale), (int)(_rectSelection.Y * vScale), (int)(_rectSelection.Width * hScale), (int)(_rectSelection.Height * vScale)),  
                     GraphicsUnit.Pixel);
             }
             CloseForms();
@@ -141,10 +141,10 @@ namespace Snipping_OCR
                 int x2 = _rectSelection.X + _rectSelection.Width;
                 int y1 = _rectSelection.Y;
                 int y2 = _rectSelection.Y + _rectSelection.Height;
-                e.Graphics.FillRectangle(br, new Rectangle(0, 0, x1, this.Height));
-                e.Graphics.FillRectangle(br, new Rectangle(x2, 0, this.Width - x2, this.Height));
+                e.Graphics.FillRectangle(br, new Rectangle(0, 0, x1, Height));
+                e.Graphics.FillRectangle(br, new Rectangle(x2, 0, Width - x2, Height));
                 e.Graphics.FillRectangle(br, new Rectangle(x1, 0, x2 - x1, y1));
-                e.Graphics.FillRectangle(br, new Rectangle(x1, y2, x2 - x1, this.Height - y2));
+                e.Graphics.FillRectangle(br, new Rectangle(x1, y2, x2 - x1, Height - y2));
             }
             using (Pen pen = new Pen(Color.Red, 2))
             {
