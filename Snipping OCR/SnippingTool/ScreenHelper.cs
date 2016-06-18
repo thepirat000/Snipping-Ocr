@@ -1,41 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Runtime.InteropServices;
 
 namespace Snipping_OCR
 {
-    public class DeviceInfo
-    {
-        public string DeviceName { get; set; }
-        public int VerticalResolution { get; set; }
-        public int HorizontalResolution { get; set; }
-        public Rect MonitorArea { get; set; }
-    }
-
-    [StructLayout(LayoutKind.Sequential)]
-    public struct Rect
-    {
-        public int left;
-        public int top;
-        public int right;
-        public int bottom;
-    }
-
-    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
-    internal struct MONITORINFOEX
-    {
-        public int Size;
-        public Rect Monitor;
-        public Rect WorkArea;
-        public uint Flags;
-        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
-        public string DeviceName;
-    }
-
     public static class ScreenHelper
     {
-        private const int DESKTOPVERTRES = 117;
-        private const int DESKTOPHORZRES = 118;
+        private const int DektopVertRes = 117;
+        private const int DesktopHorzRes = 118;
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct Rect
+        {
+            public int left;
+            public int top;
+            public int right;
+            public int bottom;
+        }
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+        internal struct MONITORINFOEX
+        {
+            public int Size;
+            public Rect Monitor;
+            public Rect WorkArea;
+            public uint Flags;
+            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)]
+            public string DeviceName;
+        }
         private delegate bool MonitorEnumDelegate(IntPtr hMonitor, IntPtr hdcMonitor, ref Rect lprcMonitor, IntPtr dwData);
         [DllImport("user32.dll")]
         private static extern bool EnumDisplayMonitors(IntPtr hdc, IntPtr lprcClip, MonitorEnumDelegate lpfnEnum, IntPtr dwData);
@@ -68,9 +59,9 @@ namespace Snipping_OCR
                 var di = new DeviceInfo
                 {
                     DeviceName = mi.DeviceName,
-                    MonitorArea = mi.Monitor,
-                    VerticalResolution = GetDeviceCaps(dc, DESKTOPVERTRES),
-                    HorizontalResolution = GetDeviceCaps(dc, DESKTOPHORZRES)
+                    MonitorArea = new Rectangle(mi.Monitor.left, mi.Monitor.top, mi.Monitor.right-mi.Monitor.right, mi.Monitor.bottom-mi.Monitor.top),
+                    VerticalResolution = GetDeviceCaps(dc, DektopVertRes),
+                    HorizontalResolution = GetDeviceCaps(dc, DesktopHorzRes)
                 };
                 ReleaseDC(IntPtr.Zero, dc);
                 _result.Add(di);

@@ -67,8 +67,8 @@ namespace Snipping_OCR
             {
                 int hRes = screens[i].HorizontalResolution;
                 int vRes = screens[i].VerticalResolution;
-                int top = screens[i].MonitorArea.top;
-                int left = screens[i].MonitorArea.left;
+                int top = screens[i].MonitorArea.Top;
+                int left = screens[i].MonitorArea.Left;
                 var bmp = new Bitmap(hRes, vRes, PixelFormat.Format32bppPArgb);
                 using (var g = Graphics.FromImage(bmp))
                 {
