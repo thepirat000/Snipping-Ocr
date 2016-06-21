@@ -10,7 +10,7 @@ How to use:
 
 ![Start](http://i.imgur.com/3FIfidD.png)
 
-##### 3 - Select the area to recognize by OCR 
+##### 3 - Select the area on your desktop to recognize by OCR 
 
 ![Snip](http://i.imgur.com/BmpcXrB.png)
 
