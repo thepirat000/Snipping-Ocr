@@ -19,3 +19,8 @@ How to use:
 ![Process](http://i.imgur.com/3R1BQHO.png)
 
 ![Result](http://i.imgur.com/jFxz4jt.png)
+
+
+Download executable from [Releases](https://github.com/thepirat000/Snipping-Ocr/releases/)
+or
+Install via ClickOnce from [Here](http://thepirat-win.cloudapp.net/Snipping-Ocr/)
