@@ -1,6 +1,6 @@
 # Snipping-Ocr
 
-#### A simple Snipping tool for Windows with OCR capabilities
+#### A simple Snipping tool for Windows with OCR capabilities using [Tesseract](https://github.com/tesseract-ocr/tesseract)
 
 How to use:
 
