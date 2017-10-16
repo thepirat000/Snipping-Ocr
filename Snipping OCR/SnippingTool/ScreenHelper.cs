@@ -59,7 +59,7 @@ namespace Snipping_OCR
                 var di = new DeviceInfo
                 {
                     DeviceName = mi.DeviceName,
-                    MonitorArea = new Rectangle(mi.Monitor.left, mi.Monitor.top, mi.Monitor.right-mi.Monitor.right, mi.Monitor.bottom-mi.Monitor.top),
+                    MonitorArea = new Rectangle(mi.Monitor.left, mi.Monitor.top, mi.Monitor.right-mi.Monitor.left, mi.Monitor.bottom-mi.Monitor.top),
                     VerticalResolution = GetDeviceCaps(dc, DektopVertRes),
                     HorizontalResolution = GetDeviceCaps(dc, DesktopHorzRes)
                 };
