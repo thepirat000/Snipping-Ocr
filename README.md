@@ -2,7 +2,7 @@
 
 #### A simple Snipping tool for Windows with OCR capabilities using [Tesseract](https://github.com/tesseract-ocr/tesseract)
 
-> NOTE: This is just an example application for which I do not give support. You are free to copy/paste the code. Do not expect bugs/issues to be corrected.
+> NOTE: This is just an example application for which I do not give support. You are free to copy/paste the code. Do not expect bugs/issues to be fixed.
 
 How to use:
 
