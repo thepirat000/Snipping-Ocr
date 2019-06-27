@@ -1,6 +1,6 @@
 # Snipping-Ocr
 
-#### A simple Snipping tool for Windows with OCR capabilities using [Tesseract](https://github.com/tesseract-ocr/tesseract)
+#### A simple Snipping tool for Windows with OCR capabilities using [SpaceOCR API](https://ocr.space/ocrapi) **or** [Tesseract](https://github.com/tesseract-ocr/tesseract)
 
 > NOTE: This is just an example application for which I do not give support. You are free to copy/paste the code. Do not expect bugs/issues to be fixed.
 
@@ -20,8 +20,7 @@ How to use:
 
 ![Process](http://i.imgur.com/3R1BQHO.png)
 
-![Result](http://i.imgur.com/jFxz4jt.png)
-
+![Result](https://i.imgur.com/frqMxYw.png)
 
 Download executable from [Releases](https://github.com/thepirat000/Snipping-Ocr/releases/)
 or
