@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.notifyMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuEngine = new System.Windows.Forms.ToolStripComboBox();
             this.mnuLanguageCombo = new System.Windows.Forms.ToolStripComboBox();
             this.mnuSnip = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuClipboardNow = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,6 +56,7 @@
             // 
             this.notifyMenu.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.notifyMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuEngine,
             this.mnuLanguageCombo,
             this.mnuSnip,
             this.mnuClipboardNow,
@@ -62,7 +64,16 @@
             this.exitToolStripMenuItem,
             this.mnuExit});
             this.notifyMenu.Name = "notifyMenu";
-            this.notifyMenu.Size = new System.Drawing.Size(230, 146);
+            this.notifyMenu.Size = new System.Drawing.Size(186, 174);
+            // 
+            // mnuEngine
+            // 
+            this.mnuEngine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.mnuEngine.Items.AddRange(new object[] {
+            "SpaceOCR",
+            "Tesseract"});
+            this.mnuEngine.Name = "mnuEngine";
+            this.mnuEngine.Size = new System.Drawing.Size(121, 23);
             // 
             // mnuLanguageCombo
             // 
@@ -71,14 +82,14 @@
             "English",
             "Spanish"});
             this.mnuLanguageCombo.Name = "mnuLanguageCombo";
-            this.mnuLanguageCombo.Size = new System.Drawing.Size(121, 28);
+            this.mnuLanguageCombo.Size = new System.Drawing.Size(121, 23);
             this.mnuLanguageCombo.Click += new System.EventHandler(this.toolStripComboBox1_Click);
             // 
             // mnuSnip
             // 
             this.mnuSnip.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.mnuSnip.Name = "mnuSnip";
-            this.mnuSnip.Size = new System.Drawing.Size(229, 26);
+            this.mnuSnip.Size = new System.Drawing.Size(185, 22);
             this.mnuSnip.Text = "Snip (CTRL+WIN+C)";
             this.mnuSnip.Click += new System.EventHandler(this.mnuSnip_Click);
             // 
@@ -86,35 +97,35 @@
             // 
             this.mnuClipboardNow.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.mnuClipboardNow.Name = "mnuClipboardNow";
-            this.mnuClipboardNow.Size = new System.Drawing.Size(229, 26);
+            this.mnuClipboardNow.Size = new System.Drawing.Size(185, 22);
             this.mnuClipboardNow.Text = "Process Clipboard";
             this.mnuClipboardNow.Click += new System.EventHandler(this.mnuClipboardNow_Click);
             // 
             // mnuMonitorClipboard
             // 
             this.mnuMonitorClipboard.Name = "mnuMonitorClipboard";
-            this.mnuMonitorClipboard.Size = new System.Drawing.Size(229, 26);
+            this.mnuMonitorClipboard.Size = new System.Drawing.Size(185, 22);
             this.mnuMonitorClipboard.Text = "Monitor clipboard";
             this.mnuMonitorClipboard.Click += new System.EventHandler(this.mnuMonitorClipboard_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(226, 6);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(182, 6);
             // 
             // mnuExit
             // 
             this.mnuExit.Name = "mnuExit";
-            this.mnuExit.Size = new System.Drawing.Size(229, 26);
+            this.mnuExit.Size = new System.Drawing.Size(185, 22);
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(839, 543);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ClientSize = new System.Drawing.Size(629, 441);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "MainForm";
             this.Text = "OCR";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -135,6 +146,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuClipboardNow;
         private System.Windows.Forms.ToolStripComboBox mnuLanguageCombo;
         private System.Windows.Forms.ToolStripMenuItem mnuSnip;
+        private System.Windows.Forms.ToolStripComboBox mnuEngine;
     }
 }
 

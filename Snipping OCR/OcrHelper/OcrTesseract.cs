@@ -1,20 +1,24 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Text;
+using System.Threading.Tasks;
 using Tesseract;
 
 namespace Snipping_OCR
 {
-    public class Ocr
+    public class OcrTesseract : IOcr
     {
-        public static OcrResult Process(string filePath, string language = "eng")
+        public OcrResult Process(string filePath, string language = "eng")
         {
             using (var pix = Pix.LoadFromFile(filePath))
             {
                 return ProcessProc(pix, language);
             }
         }
-        public static OcrResult Process(Image image, string language = "eng")
+
+        public OcrResult Process(Image image, string language = "eng")
         {
             using (var ms = new MemoryStream())
             {
@@ -26,7 +30,8 @@ namespace Snipping_OCR
                 }
             }
         }
-        private static OcrResult ProcessProc(Pix pix, string language = "eng")
+
+        private OcrResult ProcessProc(Pix pix, string language = "eng")
         {
             try
             {

@@ -9,11 +9,12 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Snipping_OCR</RootNamespace>
     <AssemblyName>Snipping OCR</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <PublishUrl>D:\my downloads\OCR_Deploy\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
@@ -46,6 +47,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -55,6 +57,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>edit_find.ico</ApplicationIcon>
@@ -63,10 +66,10 @@
     <StartupObject>Snipping_OCR.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>ACE421EE9E1F314EA131358CCDCCAD909961E728</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>42ADF553EE902010BC312D200AE14B5C0CAB1B18</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Snipping OCR_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>Snipping OCR_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -75,8 +78,12 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -107,8 +114,12 @@
       <DependentUpon>OcrResultForm.cs</DependentUpon>
     </Compile>
     <Compile Include="HotkeyHelper\HotKey.cs" />
-    <Compile Include="OcrHelper\Ocr.cs" />
+    <Compile Include="OcrHelper\IOcr.cs" />
+    <Compile Include="OcrHelper\OcrTesseract.cs" />
+    <Compile Include="OcrHelper\OcrFactory.cs" />
     <Compile Include="OcrHelper\OcrResult.cs" />
+    <Compile Include="OcrHelper\OcrSpaceOcr.cs" />
+    <Compile Include="OcrHelper\OcrSpace\MODELS.cs" />
     <Compile Include="SnippingTool\DeviceInfo.cs" />
     <Compile Include="SnippingTool\ScreenHelper.cs" />
     <Compile Include="SnippingTool\SnippingTool.cs">
@@ -157,7 +168,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Snipping OCR_TemporaryKey.pfx" />
+    <None Include="Snipping OCR_1_TemporaryKey.pfx" />
     <Content Include="tessdata\eng.cube.bigrams">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

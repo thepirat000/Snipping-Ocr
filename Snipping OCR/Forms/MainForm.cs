@@ -29,6 +29,7 @@ namespace Snipping_OCR
             WindowState = FormWindowState.Minimized;
             notifyIcon.Visible = true;
             mnuLanguageCombo.SelectedIndex = 0;
+            mnuEngine.SelectedIndex = 0;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -155,7 +156,8 @@ namespace Snipping_OCR
         private void ProcessOcrImage(Image image)
         {
             var lang = (string)mnuLanguageCombo.SelectedItem == "Spanish" ? "spa" : "eng";
-            var result = Ocr.Process(image, lang);
+            var ocr = OcrFactory.GetOcr(mnuEngine.SelectedItem.ToString());
+            var result = ocr.Process(image, lang);
             notifyIcon.Visible = true; // hide balloon tip (if any)
             OcrResultForm.ShowOcr(result);
         }
