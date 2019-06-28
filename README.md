@@ -10,7 +10,7 @@ Install via ClickOnce from [Here](https://snipping-ocr.azurewebsites.net/snippin
 
 > NOTE: This is just an example application for which I do not give support. You are free to copy/paste the code. Do not expect bugs/issues to be fixed.
 
-## Uage
+## Usage
 
 ##### 1 - Start the application that will start as a systray icon.
 
