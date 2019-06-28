@@ -64,7 +64,7 @@
             this.exitToolStripMenuItem,
             this.mnuExit});
             this.notifyMenu.Name = "notifyMenu";
-            this.notifyMenu.Size = new System.Drawing.Size(186, 174);
+            this.notifyMenu.Size = new System.Drawing.Size(191, 174);
             // 
             // mnuEngine
             // 
@@ -89,34 +89,34 @@
             // 
             this.mnuSnip.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.mnuSnip.Name = "mnuSnip";
-            this.mnuSnip.Size = new System.Drawing.Size(185, 22);
-            this.mnuSnip.Text = "Snip (CTRL+WIN+C)";
+            this.mnuSnip.Size = new System.Drawing.Size(190, 22);
+            this.mnuSnip.Text = "Snip (SHIFT+WIN+C)";
             this.mnuSnip.Click += new System.EventHandler(this.mnuSnip_Click);
             // 
             // mnuClipboardNow
             // 
             this.mnuClipboardNow.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.mnuClipboardNow.Name = "mnuClipboardNow";
-            this.mnuClipboardNow.Size = new System.Drawing.Size(185, 22);
+            this.mnuClipboardNow.Size = new System.Drawing.Size(190, 22);
             this.mnuClipboardNow.Text = "Process Clipboard";
             this.mnuClipboardNow.Click += new System.EventHandler(this.mnuClipboardNow_Click);
             // 
             // mnuMonitorClipboard
             // 
             this.mnuMonitorClipboard.Name = "mnuMonitorClipboard";
-            this.mnuMonitorClipboard.Size = new System.Drawing.Size(185, 22);
+            this.mnuMonitorClipboard.Size = new System.Drawing.Size(190, 22);
             this.mnuMonitorClipboard.Text = "Monitor clipboard";
             this.mnuMonitorClipboard.Click += new System.EventHandler(this.mnuMonitorClipboard_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(182, 6);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(187, 6);
             // 
             // mnuExit
             // 
             this.mnuExit.Name = "mnuExit";
-            this.mnuExit.Size = new System.Drawing.Size(185, 22);
+            this.mnuExit.Size = new System.Drawing.Size(190, 22);
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
             // 

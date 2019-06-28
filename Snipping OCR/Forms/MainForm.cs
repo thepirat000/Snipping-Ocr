@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
@@ -36,7 +37,10 @@ namespace Snipping_OCR
         {
             RegisterClipboardViewer();
             RegisterHotKey();
-            ShowBaloonMessage("Double-click the systray icon or press CTRL+WIN+C to start a new snip...", "Snipping OCR");
+
+            var hk = ConfigurationManager.AppSettings["Hotkey"];
+            ShowBaloonMessage($"Double-click the systray icon or press {hk} to start a new snip...", "Snipping OCR");
+            mnuSnip.Text = $"Snip {hk}";
             Hide();
         }
 
@@ -57,9 +61,7 @@ namespace Snipping_OCR
 
         private void RegisterHotKey()
         {
-            _hotkey.KeyCode = Keys.C;
-            _hotkey.Windows = true;
-            _hotkey.Control = true;
+            SetHotKeyFromConfig();
             _hotkey.Pressed += Hk_Win_C_OnPressed;
 
             if (!_hotkey.GetCanRegister(this))
@@ -70,6 +72,37 @@ namespace Snipping_OCR
             {
                 _hotkey.Register(this);
             }
+        }
+
+        private void SetHotKeyFromConfig()
+        {
+            _hotkey.Shift = _hotkey.Alt =_hotkey.Control = _hotkey.Windows = false;
+            var hk = ConfigurationManager.AppSettings["Hotkey"];
+            var items = hk.Split('+');
+            if (items.Length > 1)
+            {
+                for (int i = 0; i < items.Length - 1; i++)
+                {
+                    if (items[i].ToUpper() == "SHIFT")
+                    {
+                        _hotkey.Shift = true;
+                    }
+                    if (items[i].ToUpper() == "CTRL" || items[i].ToUpper() == "CONTROL")
+                    {
+                        _hotkey.Control = true;
+                    }
+                    if (items[i].ToUpper() == "WIN" || (items[i].ToUpper() == "WINDOWS"))
+                    {
+                        _hotkey.Windows = true;
+                    }
+                    if (items[i].ToUpper() == "ALT")
+                    {
+                        _hotkey.Alt = true;
+                    }
+                }
+            }
+            _hotkey.KeyCode = (Keys)(int)items[items.Length-1][0];
+
         }
 
         private void Hk_Win_C_OnPressed(object sender, HandledEventArgs handledEventArgs)
