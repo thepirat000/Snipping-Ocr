@@ -2,9 +2,15 @@
 
 #### A simple Snipping tool for Windows with OCR capabilities using [SpaceOCR API](https://ocr.space/ocrapi) **or** [Tesseract](https://github.com/tesseract-ocr/tesseract)
 
+## Installation
+
+Download executable from [Releases](https://github.com/thepirat000/Snipping-Ocr/releases/)
+or
+Install via ClickOnce from [Here](https://snipping-ocr.azurewebsites.net/snipping-ocr/)
+
 > NOTE: This is just an example application for which I do not give support. You are free to copy/paste the code. Do not expect bugs/issues to be fixed.
 
-How to use:
+## Usage
 
 ##### 1 - Start the application that will start as a systray icon.
 
@@ -21,7 +27,3 @@ How to use:
 ![Process](http://i.imgur.com/3R1BQHO.png)
 
 ![Result](https://i.imgur.com/frqMxYw.png)
-
-Download executable from [Releases](https://github.com/thepirat000/Snipping-Ocr/releases/)
-or
-Install via ClickOnce from [Here](http://thepirat-win.cloudapp.net/Snipping-Ocr/)
