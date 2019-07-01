@@ -3,7 +3,7 @@
   <metadata>
     <id>snipping-ocr</id>
     <title>Snipping OCR</title>
-    <version>1.0.0.0</version>
+    <version>1.0.0.14</version>
     <authors>Federico Colombo</authors>
     <owners>Federico Colombo</owners>
     <summary>A Snipping tool for Windows with OCR capabilities.</summary>
