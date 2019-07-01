@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata>
+    <id>snipping-ocr</id>
+    <title>Snipping OCR</title>
+    <version>1.0.0.0</version>
+    <authors>Federico Colombo</authors>
+    <owners>Federico Colombo</owners>
+    <summary>A Snipping tool for Windows with OCR capabilities.</summary>
+    <description>A simple Snipping tool for Windows with OCR capabilities using SpaceOCR API or Tesseract.</description>
+    <projectUrl>https://github.com/thepirat000/Snipping-Ocr</projectUrl>
+    <tags>OCR Snipping Capture Windows</tags>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance> <!-- or true if you require the user to accept the License before installing -->
+    <iconUrl>https://i.imgur.com/miDyupt.png</iconUrl>
+  </metadata>
+</package>
