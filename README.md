@@ -4,9 +4,11 @@
 
 ## Installation
 
-Download executable from [Releases](https://github.com/thepirat000/Snipping-Ocr/releases/)
-or
-Install via ClickOnce from [Here](https://snipping-ocr.azurewebsites.net/snipping-ocr/)
+You have multiple ways to install the application:
+
+- Chocolatey: Install via [Chocolatey](https://chocolatey.org/docs/installation) with command `choco install snipping-ocr`.
+- ClickOnce: Install via ClickOnce from [here](https://snipping-ocr.azurewebsites.net/snipping-ocr/).
+- Manual: Download executable from [Releases](https://github.com/thepirat000/Snipping-Ocr/releases/).
 
 > NOTE: This is just an example application for which I do not give support. You are free to copy/paste the code. Do not expect bugs/issues to be fixed.
 
