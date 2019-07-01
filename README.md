@@ -29,7 +29,9 @@ Check [this SO question](https://superuser.com/questions/1252575/unable-to-insta
 
 ##### 1 - Start the application that will start as a systray icon.
 
-##### 2 - Double-click the systray icon or press the Hotkey combination (CTRL+WIN+C) to start a new snip.
+##### 2 - Double-click the systray icon or press the Hotkey combination (CTRL+WIN+C) to start a new snip. 
+
+> The hotkey combination can be changed and is configured on the `Snipping OCR.exe.config` file
 
 ![Start](http://i.imgur.com/3FIfidD.png)
 
