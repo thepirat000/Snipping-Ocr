@@ -10,6 +10,19 @@ Install via ClickOnce from [Here](https://snipping-ocr.azurewebsites.net/snippin
 
 > NOTE: This is just an example application for which I do not give support. You are free to copy/paste the code. Do not expect bugs/issues to be fixed.
 
+### ClickOnce installation
+
+When installing from [ClickOnce](https://snipping-ocr.azurewebsites.net/snipping-ocr/) you can get a security warning with the message "Your security settings do not allow this application to be installed on your computer". In order to be able to install, you can update the registry by creating a `.reg` file with the following content and then executing it:
+
+```
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\Security\TrustManager\PromptingLevel]
+"Internet"="Enabled"
+```
+
+Check [this SO question](https://superuser.com/questions/1252575/unable-to-install-clickonce-application-due-to-security-settings-windows-10).
+
 ## Usage
 
 ##### 1 - Start the application that will start as a systray icon.
