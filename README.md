@@ -4,9 +4,8 @@
 
 ## Installation
 
-There are have multiple ways to install the application:
+There are two ways to install the application:
 
-- Chocolatey: Install via [Chocolatey](https://chocolatey.org/docs/installation) with command `choco install snipping-ocr`
 - ClickOnce: Install via ClickOnce from [here](https://snipping-ocr.azurewebsites.net/snipping-ocr/)
 - Manual: Download `Setup.msi` from [Releases](https://github.com/thepirat000/Snipping-Ocr/releases/)
 
